@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}" class='han-la'>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="color-scheme" content="dark light">
+	<meta name="theme-color" content="{{$.Site.Params.accentColor}}">
+	<meta name="msapplication-TileColor" content="{{$.Site.Params.accentColor}}">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+	{{ if .IsHome -}}
+	<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}">
+	{{ end }}
+	{{- template "_internal/schema.html" . }}
+	{{- template "_internal/opengraph.html" . }}
+	{{- template "_internal/twitter_cards.html" . }}
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#54bab9">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<title>{{.Title}}</title>
+	<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+	<link rel="dns-prefetch" href="//comment.zak.ee">
+	<link rel="dns-prefetch" href="//gravatar.loli.net">
+	{{ range .AlternativeOutputFormats -}}
+	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify | fingerprint -}}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }}>
+	{{- .Scratch.Set "pageClass" ""}}
+	{{ block "head" . -}}{{- end }}
+	<script async defer data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" src="https://analytics.zak.ee/umami.js" data-domains="zak.ee"></script>
+</head>
+
+<body>
+	<div id="page" class="{{.Scratch.Get "pageClass"}}">
+		{{ block "header" . -}}{{ end -}}
+		{{ block "main" . -}}{{ end -}}
+		{{ block "footer" . -}}{{ end }}
+	</div>
+	<div id="bg-img"></div>
+	{{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
+	<script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }}></script>
+	<script src="/js/instant.page-5.1.1.js" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</body>
+
+</html>

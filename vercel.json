@@ -1,0 +1,35 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/posts/(.*)",
+      "destination": "/writing/$1",
+      "permanent": true
+    },
+    {
+      "source": "/post/(.*)",
+      "destination": "/writing/$1",
+      "permanent": true
+    },
+    {
+      "source": "/friends/",
+      "destination": "/link/",
+      "permanent": true
+    },
+    {
+      "source": "/links/",
+      "destination": "/link/",
+      "permanent": true
+    },
+    {
+      "source": "/writing/2018/compile-nginx-tls1.3/",
+      "destination": "/writing/2018/compile-nginx-tls1_3/",
+      "permanent": true
+    },
+    {
+      "source": "/writing/2018/compile-nginx-tls1.3",
+      "destination": "/writing/2018/compile-nginx-tls1_3/",
+      "permanent": true
+    }
+  ]
+}
