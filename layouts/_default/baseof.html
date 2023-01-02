@@ -33,6 +33,8 @@
 	<link rel="stylesheet" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }}>
 	{{- .Scratch.Set "pageClass" ""}}
 	{{ block "head" . -}}{{- end }}
+  <script src="https://lib.baomitu.com/jquery/3.6.3/jquery.min.js"></script>
+  <script src="/js/text-autospace.js"></script>
 </head>
 
 <body>
