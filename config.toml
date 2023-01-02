@@ -54,12 +54,12 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 
   [[menu.main]]
     name = "Writing"
-    pageref = "/writing/"
+    url = "/writing/"
     weight = 10
 
   [[menu.main]]
     name = "Gallery"
-    pageref = "/gallery/"
+    url = "/gallery/"
     weight = 20
 
   # [[menu.main]]
@@ -69,5 +69,5 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 
   [[menu.main]]
     name = "About"
-    pageref = "/about"
+    url = "/about"
     weight = 40
