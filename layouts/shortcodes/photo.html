@@ -1,26 +1,30 @@
 {{ $src := .Get "src"}}
+{{ $image := (resources).GetRemote (printf "%s" $src) -}}
 <figure class="big">
 	<img src="{{$src}}" loading="lazy"
 			 {{- if or (.Get "alt") (.Get "caption") }}
 			 alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
 			 {{- end -}}
-			 {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-			 {{- with .Get "height" }} height="{{ . }}"{{ end -}}
+			 {{- with $image.Width }} width="{{ . }}"{{ end -}}
+			 {{- with $image.Height }} height="{{ . }}"{{ end -}}
 	/><!-- Closing img tag -->
-	{{- if .Get "link" }}</a>{{ end -}}
-	{{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
-			<figcaption>
-					{{ with (.Get "title") -}}
-							<h4>{{ . }}</h4>
-					{{- end -}}
-					{{- if or (.Get "caption") (.Get "attr") -}}<p>
-							{{- .Get "caption" | markdownify -}}
-							{{- with .Get "attrlink" }}
-									<a href="{{ . }}">
-							{{- end -}}
-							{{- .Get "attr" | markdownify -}}
-							{{- if .Get "attrlink" }}</a>{{ end }}</p>
-					{{- end }}
-			</figcaption>
-	{{- end }}
+	<figcaption>
+		{{ with (.Get "title") -}}
+		<h4>{{ . }}</h4>
+		{{ end -}}
+		{{- if or (.Get "caption") $image.Exif -}}
+		<p>
+			{{- .Get "caption" | markdownify -}}
+			{{ end -}}
+			{{ with $image.Exif -}}
+			<span class="image_meta">
+				{{ with .Tags.Model }}{{.}} {{ end -}}
+				{{ with .Tags.FocalLength }}@ {{.}}mm {{ end -}}
+				{{ with .Tags.FNumber }}&mdash; &fnof;/{{.}}{{ end -}}
+				{{ with .Tags.ExposureTime }}, {{ lang.FormatNumber 2 . }} sec{{ end -}}
+				{{ with .Tags.ISOSpeedRatings }}, ISO {{.}} {{ end }}
+			</span>
+			{{ end -}}
+		</p>
+	</figcaption>
 </figure>
