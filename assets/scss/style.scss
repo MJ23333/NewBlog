@@ -41,7 +41,7 @@ select,
 textarea {
   color: var(--c-txt);
   background-color: var(--c-bg);
-  line-height: 1.6em;
+  line-height: calc(1.6em + .2vw);
   font-family: $fonts;
   letter-spacing: .05rem;
   transition: color .5s, background-color .5s, border-color .5s;
@@ -458,4 +458,7 @@ html.han-la ul > hanla {
 	padding-right: 2px;
 	padding-top: 2px;
 	padding-bottom: 2px;
+}
+.content p{
+  padding-bottom: 1.2em;
 }
