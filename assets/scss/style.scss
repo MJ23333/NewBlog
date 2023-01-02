@@ -79,7 +79,7 @@ blockquote {
   margin: 1.5em 1em;
   font-style: italic;
   font-family: $serif-fonts;
-  letter-spacing: normal;
+  letter-spacing: .07rem;
   color: var(--c-txt-alt);
   &::before {
     content: "“";
