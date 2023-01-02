@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "zh-hans"
-title = "Zakee's Planet"
+title = "Eufemia"
 staticDir = ["static", "content-static"]
 
 hasCJKLanguage = true
@@ -8,7 +8,7 @@ rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 
 [author]
-  name = "Zakee"
+  name = "Edward Kerman"
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -31,24 +31,24 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
-  description = "Zakee的个人博客"
-  keywords = "Zakee,Track3,blog,博客,个人网站,中文独立博客"
+  description = "Edward Kerman的个人博客"
+  keywords = "MJ,Edward Kerman,blog,博客,个人网站,中文独立博客"
   accentColor = "#54BAB9"
   images = ["apple-touch-icon.png"]
   # bgImg = "/img/bg.jpg"
   # gitUrl = "https://github.com/Track3/blog/commit/"
 
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/ThatTrack3"
+  # [[params.social]]
+  #   name = "twitter"
+  #   url = "https://twitter.com/ThatTrack3"
 
-  [[params.social]]
-    name = "telegram"
-    url = "http://t.me/ThatTrack3"
+  # [[params.social]]
+  #   name = "telegram"
+  #   url = "http://t.me/ThatTrack3"
 
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/Track3"
+  # [[params.social]]
+  #   name = "github"
+  #   url = "https://github.com/Track3"
 
 [menu]
 
@@ -62,10 +62,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
     pageref = "/gallery"
     weight = 20
 
-  [[menu.main]]
-    name = "Link"
-    pageref = "/link"
-    weight = 30
+  # [[menu.main]]
+  #   name = "Link"
+  #   pageref = "/link"
+  #   weight = 30
 
   [[menu.main]]
     name = "About"
