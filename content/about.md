@@ -16,4 +16,4 @@ comments: false
 
 欧菲米亚是个在每年冬夏至和春秋分交换记忆的城市。
 
-{{< figure src="https://cdn.jsdelivr.net/gh/MJ23333/pic/imgEUFEMIA.jpg" alt="Eufemia">}}
+{{< figure src="https://pic-1258734717.cos.ap-chengdu.myqcloud.com/imgEUFEMIA.webp" alt="Eufemia">}}
