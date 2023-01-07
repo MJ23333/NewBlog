@@ -36,7 +36,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   description = "Edward Kerman的个人博客"
   keywords = "MJ,Edward Kerman,blog,博客,个人网站,中文独立博客"
   accentColor = "#54BAB9"
-  images = ["apple-touch-icon.png"]
+  images = ["favicon-48x48.png"]
   # bgImg = "/img/bg.jpg"
   # gitUrl = "https://github.com/Track3/blog/commit/"
 
