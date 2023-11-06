@@ -41,7 +41,7 @@ select,
 textarea {
   color: var(--c-txt);
   background-color: var(--c-bg);
-  line-height: calc(1.8em + .2vw);
+  line-height: calc(1.4em + .2vw);
   font-family: $fonts;
   letter-spacing: .05rem;
   transition: color .5s, background-color .5s, border-color .5s;
@@ -77,8 +77,8 @@ code {
 
 blockquote {
   margin: 1.5em 1em;
-  font-style: italic;
   font-family: $serif-fonts;
+  font-style: normal;
   font-weight: normal!important;
   letter-spacing: .07rem;
   color: var(--c-txt-alt);
@@ -91,7 +91,7 @@ blockquote {
   }
   strong{
     font-weight: normal;
-    text-decoration: $accent wavy underline 0.1em;
+    text-decoration: $accent underline 3px;
   }
   p {
     margin-left: 1.2em;
